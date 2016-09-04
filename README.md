@@ -1,6 +1,5 @@
 # jquery-slide-plugin
-Jquery plugin that slides the menu from top of the navbar. Initialise slide from top menu function on your
-menu with the following parameters.
+Jquery plugin that slides the menu from top. The menu drops from behind the navbar.
 
 [Demo](http://codepen.io/hjaveed/pen/ORPVaE)
 
@@ -11,6 +10,7 @@ include jquey (Any Version)
 ```
 include slide-from-top.js
 ```
+### Initailise with following parameters
   ```javascript
   $(document).ready(function() {
     $('.mobile-side-menu').slideFromTop({
