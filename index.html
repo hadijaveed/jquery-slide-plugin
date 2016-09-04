@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Mobile Side Menu </title>
+    <style type="text/css">
+      .mobile-side-menu {
+        font-family: "Open Sans", sans-serif;
+        width: 240px;
+        display: none;
+        background-color: #1b1b1b;
+        bottom: 0px;
+        z-index: 30;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        /* has to be scroll, not auto */
+        -webkit-overflow-scrolling: touch;
+      } 
+      .mobile-side-menu ul {
+        float: none;
+        display: inline-block;
+        margin: auto;
+        width: 100%;
+        background-color: #1b1b1b;
+        border-radius: 5px;
+        list-style: none;
+      }
+      .mobile-side-menu ul > li {
+        text-align: left;
+        padding-left: 8px;
+        border-top: solid 1px #3f3f3f;
+        border-bottom: solid 1px #000;
+      }
+      .mobile-side-menu ul > li > a {
+        text-transform: capitalize;
+        text-decoration: none;
+        line-height: 20px;
+        position: relative;
+        display: block;
+        font-size: 14px;
+        color: white;
+        padding: 15px 5px 15px 10px;
+      }
+      .noscroll {
+         position: fixed;
+         right: 0;
+         top: 0;
+         overflow: hidden;
+      }
+      .overlay {
+         display: none;
+         position: fixed;
+         top: 0;
+         left: 0;
+         height: 100%;
+         width: 100%;
+         z-index: 30;
+         background-color: rgba(0, 0, 0, 0.7);
+      }
+      .navbar {
+         background-color: #e8e8e8;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+      }
+      .navbar .toggleMenu { margin: 15px 0px 15px 10px; }
+      .container {     
+         position: fixed;
+         top: 5%;
+         left: 50%;
+         transform: translate(-50%); 
+      }
+      .conatiner h1 { font-size: 2em; }
+    </style>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="mobile-side-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 1</a></li>
+      </ul>
+      <div style="height: 100px;"></div>
+    </div>
+    <div class="navbar">
+      <button class="toggleMenu">
+        <a href="#">
+          Menu
+        </a>
+      </button>
+    </div>
+    <div class="container">
+      <h1> Container element </h1>
+    </div>
+    
+    
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="slide-from-top.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+         $('.mobile-side-menu').slideFromTop({
+            menuBtn: $('.toggleMenu'),
+            navbar: $('.navbar'),
+            menuSpeed: 500,
+            bodyOverlay: $('.overlay')
+         });
+      });
+    </script>
+  </body>
+</html>
