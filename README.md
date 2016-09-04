@@ -5,7 +5,7 @@ Jquery plugin that slides the menu from top. The menu drops from behind the navb
 
 ## Usage
 ```
-include jquey (Any Version)
+include jquery (Any Version)
 ```
 ```
 include slide-from-top.js
